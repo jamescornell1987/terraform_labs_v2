@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   name     = "RG5"
-  location = "westeurope"
+  location = "eastus"
 }
 
 resource "azurerm_virtual_network" "vnet" {
