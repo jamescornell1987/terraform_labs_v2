@@ -49,7 +49,7 @@ resource "azurerm_windows_virtual_machine" "lab2" {
   name                = "VM1"
   resource_group_name = azurerm_resource_group.lab2.name
   location            = azurerm_resource_group.lab2.location
-  size                = "Standard_B2S"
+  size                = "Standard_DS2_v2"
   admin_username      = "TPadminuser"
   admin_password      = "TPP@$$w0rd1234!"
   network_interface_ids = [
@@ -63,7 +63,11 @@ resource "azurerm_windows_virtual_machine" "lab2" {
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
-    sku       = "2022-Datacenter"
+    sku       = "2016-Datacenter"
     version   = "latest"
   }
+  tags = {
+  Lab-edit = "SecondChange"
+  }
 }
+
